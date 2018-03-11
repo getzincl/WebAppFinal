@@ -1,0 +1,84 @@
+﻿@model IEnumerable<MTHeadBrewery.Models.Beer>
+
+@{
+    ViewBag.Title = "Our Brews";
+}
+
+<h2>Our Brews</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BeerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ABV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BeerDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstBrewed)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @if (item.Files.Any(f => f.FileType == FileType.Avatar))
+    {
+            <div class="form-group">
+                <div class="col-md-10">
+                    <img src="~/File?id=@item.Files.First(f => f.FileType == FileType.Avatar).FileId" alt="avatar" height="296" width="272"/>
+                </div>
+            </div>
+}
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BeerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ABV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BeerDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstBrewed)
+            </td>
+            <td>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    if (User.Identity.Name == "admin@gmail.com")
+                    {
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+                    }
+                }
+                @Html.ActionLink("Details", "Details", new { id = item.ID })
+                @if (User.Identity.IsAuthenticated)
+                {
+                    if (User.Identity.Name == "admin@gmail.com")
+                    {
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                    }
+                }
+
+            </td>
+        </tr>
+
+    }
+
+</table>
+
+@if (User.Identity.IsAuthenticated)
+{
+    if (User.Identity.Name == "Superadmin@gmail.com")
+    {
+        <img src="images/photo1.jpg" alt="Mountain View">
+    }
+} 

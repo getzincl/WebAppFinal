@@ -1,0 +1,74 @@
+﻿@model MTHeadBrewery.Models.Beer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Beer</h4>
+    <hr />
+    <dl class="dl-horizontal">                               <!--added mtheadbrewery.models before filtetype.avatar-->
+        @if (Model.Files.Any(f => f.FileType == MTHeadBrewery.Models.FileType.Avatar))
+    {
+        <dt>
+            Avatar
+        </dt>
+        <dd>
+            <!--added mtheadbrewery.models before filtetype.avatar-->
+            <img src="~/File?id=@Model.Files.First(f => f.FileType == MTHeadBrewery.Models.FileType.Avatar).FileId" alt="avatar" />
+        </dd>
+}
+        <dt>
+            @Html.DisplayNameFor(model => model.BeerName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BeerName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ABV)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ABV)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BeerDescription)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BeerDescription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstBrewed)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstBrewed)
+        </dd>
+
+        <dt> --   </dt>
+        <dd> --   </dd>
+        <!--added during the CRUD tutorial-->
+        <dt>
+            @Html.DisplayNameFor(model => model.Brewing)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>First Brewed By</th>
+                </tr>
+                @foreach (var item in Model.Brewing)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Employee.Fname)
+                        @Html.DisplayFor(modelItem => item.Employee.Lname)
+                    </td>
+                </tr>
+        }
+            </table>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTHeadBrewery", "MTHeadBrewery\MTHeadBrewery.csproj", "{2E226EEC-772D-439C-AC96-A51414F18C27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTHeadBrewery.Tests", "MTHeadBrewery.Tests\MTHeadBrewery.Tests.csproj", "{E54A7B50-7F2D-43AE-BB62-C7B151AC664C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E226EEC-772D-439C-AC96-A51414F18C27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E226EEC-772D-439C-AC96-A51414F18C27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E226EEC-772D-439C-AC96-A51414F18C27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E226EEC-772D-439C-AC96-A51414F18C27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E54A7B50-7F2D-43AE-BB62-C7B151AC664C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E54A7B50-7F2D-43AE-BB62-C7B151AC664C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E54A7B50-7F2D-43AE-BB62-C7B151AC664C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E54A7B50-7F2D-43AE-BB62-C7B151AC664C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B5E681B2-8696-4948-855B-A43C94E2C134}
+	EndGlobalSection
+EndGlobal
